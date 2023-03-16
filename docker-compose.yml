@@ -12,6 +12,6 @@ services:
     volumes: *app-volumes
     stdin_open: true
     tty: true
-    command: bundle exec hanami server
+    command: bundle exec falcon serve --bind http://0.0.0.0:9292
     ports:
-      - 2300:2300
+      - 3000:9292

@@ -8,7 +8,7 @@ gem "hanami-controller", "~> 2.0"
 gem "hanami-validations", "~> 2.0"
 
 gem "dry-types", "~> 1.0", ">= 1.6.1"
-gem "puma"
+gem "falcon"
 gem "rake"
 
 group :development, :test do
@@ -24,7 +24,7 @@ group :cli, :development, :test do
 end
 
 group :development do
-  gem "guard-puma", "~> 0.8"
+  gem "guard-falcon"
 end
 
 group :test do
