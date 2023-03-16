@@ -12,6 +12,6 @@ services:
     volumes: *app-volumes
     stdin_open: true
     tty: true
-    command: bundle exec falcon serve --bind http://0.0.0.0:9292
+    command: bundle exec falcon host
     ports:
-      - 3000:9292
+      - 3000:80

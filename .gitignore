@@ -1,2 +1,8 @@
 .env
 log/*
+
+.ssl/*
+private.key
+certificate.pem
+supervisor.ipc
+application.ipc
