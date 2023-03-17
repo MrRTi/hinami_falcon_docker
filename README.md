@@ -21,6 +21,7 @@ Setup env variables in .env file
 
 ```bash
 cp .env.example .env
+cp .env.example .env.test
 ```
 
 ### Create databases
