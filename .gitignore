@@ -2,6 +2,7 @@
 log/*
 
 .ssl/*
+!.ssl/.keep
 private.key
 certificate.pem
 supervisor.ipc
