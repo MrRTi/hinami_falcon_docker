@@ -5,10 +5,12 @@ module Bookshelf
       class Index < Bookshelf::Action
         include Deps["persistence.rom"]
 
-        def handle(*, response)
+        def handle(request, response)
           books = rom.relations[:books]
             .select(:title, :author)
             .order(:title)
+            .page(request.params[:page] || 1)
+            .per_page(request.params[:per_page] || 5)
             .to_a
 
           response.format = :json
