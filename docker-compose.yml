@@ -3,6 +3,7 @@ version: "3.4"
 x-app-volumes:
   &app-volumes
   - .:/app
+  - bundle:/app/vendor/bundle
   - ~/.bash_history:/root/.bash_history
   - ~/.irbrc:/root/.irbrc
 
@@ -28,4 +29,5 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
 volumes:
+  bundle:
   postgres-data:
