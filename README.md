@@ -37,8 +37,8 @@ Wait untill db is ready to accept connections and run
 ```bash
 docker compose exec -ti db bash
 
-createdb -U ${POSTGRES_USER}  bookshelf_development
-createdb -U ${POSTGRES_USER}  bookshelf_test
+createdb -U ${POSTGRES_USER} bookshelf_development
+createdb -U ${POSTGRES_USER} bookshelf_test
 
 exit
 ```
