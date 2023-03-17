@@ -13,5 +13,19 @@ services:
     stdin_open: true
     tty: true
     command: bundle exec falcon host
+    depends_on:
+      - db
     ports:
       - 3000:80
+
+  db:
+    image: postgres:15.2-alpine3.17
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
