@@ -13,16 +13,10 @@ module Bookshelf
         def handle(request, response)
           book = rom.relations[:books].by_pk(
             request.params[:id]
-          ).one
+          ).one!
 
           response.format = :json
-
-          if book
-            response.body = book.to_json
-          else
-            response.status = 404
-            response.body = {error: "not_found"}.to_json
-          end
+          response.body = book.to_json
         end
       end
     end
