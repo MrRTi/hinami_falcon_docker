@@ -22,3 +22,24 @@ Setup env variables in .env file
 ```bash
 cp .env.example .env
 ```
+
+### Create databases
+
+Run db container
+
+```bash
+docker compose run --rm db
+```
+
+Wait untill db is ready to accept connections and run
+
+```bash
+docker compose exec -ti db bash
+
+createdb -U ${POSTGRES_USER}  bookshelf_development
+createdb -U ${POSTGRES_USER}  bookshelf_test
+
+exit
+```
+
+Stop db container when you done if needed
